@@ -8,3 +8,4 @@ os.system("git add .")
 os.system("git commit -m 'fix'")
 os.system("git push")
 os.system("git checkout master")
+
