@@ -1,0 +1,4 @@
+deta
+fastapi
+httpx
+beautifulsoup4

@@ -1,7 +1,9 @@
 from fastapi import FastAPI
+from deta import Deta
 from routers import crawler, auth
 
 app = FastAPI()
+deta = Deta("a09qh2ra_LhduPUAxEAXiC4KDSXkq1teE3P5VA1xi")
 
 
 @app.get("/")
