@@ -7,4 +7,4 @@ with open("test.txt", "w") as f:
 os.system("git add .")
 os.system("git commit -m 'fix'")
 os.system("git push")
-os.system("git checkout master")
+# os.system("git checkout master")
