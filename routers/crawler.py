@@ -81,7 +81,7 @@ def get_all_items_attributes_by_classname(website, item, classname, attribute):
 
 
 @router.get("/{website}/{item}/{class}/{attribute}/one")
-def get_one_items_attribute_by_classname(website, item, classname, attribute):
+def get_one_item_attribute_by_classname(website, item, classname, attribute):
     r = httpx.get("https://"+website).text
     soup = BeautifulSoup(r, "html.parser")
     return soup.find(item, class_=classname)[attribute]
