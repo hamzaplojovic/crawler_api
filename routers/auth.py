@@ -1,11 +1,13 @@
 from fastapi import Depends, APIRouter
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
 
+# user auth router
 router = APIRouter(
     prefix="/user",
     tags=["Auth"]
 )
 
+# credentials
 security = HTTPBasic()
 
 

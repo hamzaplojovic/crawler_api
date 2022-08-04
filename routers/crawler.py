@@ -2,11 +2,13 @@ import httpx
 from fastapi import APIRouter
 from bs4 import BeautifulSoup
 
+# crawler router
 router = APIRouter(
     prefix="/crawler",
     tags=["Crawler"]
 )
 
+# all crawler routes
 routes = [
     "/{website}",
     "/{website}/classes",
