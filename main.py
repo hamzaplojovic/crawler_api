@@ -8,12 +8,7 @@ deta = Deta("a09qh2ra_LhduPUAxEAXiC4KDSXkq1teE3P5VA1xi")
 
 @app.get("/")
 def app_index():
-    return ["/crawler", "/users/me"]
-
-
-@app.get("/users")
-def users():
-    return "/me"
+    return ["/crawler", "/user"]
 
 
 app.include_router(crawler.router)

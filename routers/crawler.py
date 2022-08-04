@@ -16,7 +16,6 @@ routes = [
     "/{website}/{item}/{attribute}/one",
     "/{website}/{item}/{class}/{attribute}/all",
     "/{website}/{item}/{class}/{attribute}/one"
-
 ]
 
 
