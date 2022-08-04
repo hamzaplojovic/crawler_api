@@ -25,7 +25,7 @@ def index():
 
 
 @router.get("/{website}")
-def crawl_website(website):
+def crawl_entire_website(website):
     return httpx.get("https://"+website).text
 
 
@@ -44,42 +44,42 @@ def classes(website):
 
 
 @router.get("/{website}/{item}/{attribute}/all")
-def get_item_attribute_all(website, item, attribute):
+def get_all_items_by_attributes(website, item, attribute):
     r = httpx.get("https://"+website).text
     soup = BeautifulSoup(r, "html.parser")
     return soup.find_all(item)[attribute]
 
 
 @router.get("/{website}/{item}/{attribute}/one")
-def get_item_attribute_one(website, item, attribute):
+def get_one_items_by_attributes(website, item, attribute):
     r = httpx.get("https://"+website).text
     soup = BeautifulSoup(r, "html.parser")
     return soup.find(item)[attribute]
 
 
 @router.get("/{website}/{item}/{classname}/all")
-def crawl_item_all(website, item, classname):
+def get_all_items_by_classname(website, item, classname):
     r = httpx.get("https://"+website).text
     soup = BeautifulSoup(r, "html.parser")
     return soup.find_all(item, class_=classname)
 
 
 @router.get("/{website}/{item}/{classname}/one")
-def crawl_item_all(website, item, classname):
+def get_one_items_by_classname(website, item, classname):
     r = httpx.get("https://"+website).text
     soup = BeautifulSoup(r, "html.parser")
     return soup.find(item, class_=classname)
 
 
 @router.get("/{website}/{item}/{class}/{attribute}/all")
-def crawl_item_attribute_classname_all(website, item, classname, attribute):
+def get_all_items_attributes_by_classname(website, item, classname, attribute):
     r = httpx.get("https://"+website).text
     soup = BeautifulSoup(r, "html.parser")
     return soup.findAll(item, class_=classname)[attribute]
 
 
 @router.get("/{website}/{item}/{class}/{attribute}/one")
-def crawl_item_attribute_classname_one(website, item, classname, attribute):
+def get_one_items_attributes_by_classname(website, item, classname, attribute):
     r = httpx.get("https://"+website).text
     soup = BeautifulSoup(r, "html.parser")
     return soup.find(item, class_=classname)[attribute]
