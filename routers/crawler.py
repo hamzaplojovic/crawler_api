@@ -51,7 +51,7 @@ def get_all_items_by_attributes(website, item, attribute):
 
 
 @router.get("/{website}/{item}/{attribute}/one")
-def get_one_items_by_attributes(website, item, attribute):
+def get_one_item_by_attributes(website, item, attribute):
     r = httpx.get("https://"+website).text
     soup = BeautifulSoup(r, "html.parser")
     return soup.find(item)[attribute]
@@ -65,7 +65,7 @@ def get_all_items_by_classname(website, item, classname):
 
 
 @router.get("/{website}/{item}/{classname}/one")
-def get_one_items_by_classname(website, item, classname):
+def get_one_item_by_classname(website, item, classname):
     r = httpx.get("https://"+website).text
     soup = BeautifulSoup(r, "html.parser")
     return soup.find(item, class_=classname)
@@ -79,7 +79,7 @@ def get_all_items_attributes_by_classname(website, item, classname, attribute):
 
 
 @router.get("/{website}/{item}/{class}/{attribute}/one")
-def get_one_items_attributes_by_classname(website, item, classname, attribute):
+def get_one_items_attribute_by_classname(website, item, classname, attribute):
     r = httpx.get("https://"+website).text
     soup = BeautifulSoup(r, "html.parser")
     return soup.find(item, class_=classname)[attribute]
